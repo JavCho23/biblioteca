@@ -28,13 +28,7 @@
 
       <v-spacer></v-spacer>
 
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
         <span class="mr-2">BIBLIOTECAS| UNIVERSIDAD NACIONAL PEDRO RUIZ GALLO</span>
-      </v-btn>
     </v-app-bar>
 
     <v-content>
