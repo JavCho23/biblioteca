@@ -1,8 +1,9 @@
 <template>
-  <v-app>
+  <div>
+    <Bar />
     <v-card width="480" class="mx-auto mt-8 pa-2">
       <v-card-title>
-        <h1 class="title " style="color:#0058BC">Bienvenido</h1>
+        <h1 class="title" style="color:#0058BC">Bienvenido</h1>
       </v-card-title>
       <v-card-text>
         <v-form>
@@ -19,16 +20,25 @@
       </v-card-text>
       <v-card-action>
         <v-spacer></v-spacer>
-        <v-btn color="primary">Ingresar</v-btn>
+        <v-btn @click="Biblioteca" color="primary">Ingresar</v-btn>
       </v-card-action>
     </v-card>
-  </v-app>
+  </div>
 </template>
 <script>
+import Bar from "@/components/BarPublic.vue";
 export default {
   name: "App",
+  components: {
+    Bar
+  },
   data: () => ({
     showPassword: false
-  })
+  }),
+  methods: {
+    Biblioteca() {
+      this.$router.push("/Biblioteca");
+    }
+  }
 };
 </script>
