@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-11-2019 a las 19:48:33
+-- Tiempo de generación: 10-11-2019 a las 20:27:55
 -- Versión del servidor: 10.1.40-MariaDB
 -- Versión de PHP: 7.3.5
 
@@ -69,18 +69,6 @@ CREATE TABLE `detalle_ejemplar` (
   `id_detalle_ejemplar` int(11) NOT NULL,
   `id_ejemplar` int(11) NOT NULL,
   `id_reserva` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `detalle_prestamo`
---
-
-CREATE TABLE `detalle_prestamo` (
-  `id_detalle_prestamo` int(11) NOT NULL,
-  `id_ejemplar` int(11) NOT NULL,
-  `id_prestamo` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -160,7 +148,8 @@ CREATE TABLE `prestamo` (
   `id_lector` int(11) NOT NULL,
   `id_usuario` int(11) NOT NULL,
   `fecha_inicio` date NOT NULL,
-  `fecha_termino` date NOT NULL
+  `fecha_termino` date NOT NULL,
+  `id_detalle_ejemplar` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -260,14 +249,6 @@ ALTER TABLE `detalle_ejemplar`
   ADD KEY `id_reserva` (`id_reserva`);
 
 --
--- Indices de la tabla `detalle_prestamo`
---
-ALTER TABLE `detalle_prestamo`
-  ADD PRIMARY KEY (`id_detalle_prestamo`),
-  ADD KEY `id_ejemplar` (`id_ejemplar`),
-  ADD KEY `id_prestamo` (`id_prestamo`);
-
---
 -- Indices de la tabla `editorial`
 --
 ALTER TABLE `editorial`
@@ -307,7 +288,8 @@ ALTER TABLE `libro`
 ALTER TABLE `prestamo`
   ADD PRIMARY KEY (`id_prestamo`),
   ADD KEY `id_lector` (`id_lector`),
-  ADD KEY `id_usuario` (`id_usuario`);
+  ADD KEY `id_usuario` (`id_usuario`),
+  ADD KEY `id_detalle_ejemplar` (`id_detalle_ejemplar`);
 
 --
 -- Indices de la tabla `procedencia`
@@ -371,12 +353,6 @@ ALTER TABLE `detallelibro`
 --
 ALTER TABLE `detalle_ejemplar`
   MODIFY `id_detalle_ejemplar` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `detalle_prestamo`
---
-ALTER TABLE `detalle_prestamo`
-  MODIFY `id_detalle_prestamo` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `editorial`
@@ -464,13 +440,6 @@ ALTER TABLE `detalle_ejemplar`
   ADD CONSTRAINT `detalle_ejemplar_ibfk_2` FOREIGN KEY (`id_reserva`) REFERENCES `reserva` (`id_reserva`);
 
 --
--- Filtros para la tabla `detalle_prestamo`
---
-ALTER TABLE `detalle_prestamo`
-  ADD CONSTRAINT `detalle_prestamo_ibfk_1` FOREIGN KEY (`id_ejemplar`) REFERENCES `ejemplar` (`id_ejemplar`),
-  ADD CONSTRAINT `detalle_prestamo_ibfk_2` FOREIGN KEY (`id_prestamo`) REFERENCES `prestamo` (`id_prestamo`);
-
---
 -- Filtros para la tabla `ejemplar`
 --
 ALTER TABLE `ejemplar`
@@ -494,7 +463,8 @@ ALTER TABLE `libro`
 --
 ALTER TABLE `prestamo`
   ADD CONSTRAINT `prestamo_ibfk_1` FOREIGN KEY (`id_lector`) REFERENCES `lector` (`id_lector`),
-  ADD CONSTRAINT `prestamo_ibfk_2` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`);
+  ADD CONSTRAINT `prestamo_ibfk_2` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`),
+  ADD CONSTRAINT `prestamo_ibfk_3` FOREIGN KEY (`id_detalle_ejemplar`) REFERENCES `detalle_ejemplar` (`id_detalle_ejemplar`);
 
 --
 -- Filtros para la tabla `procedencia`
