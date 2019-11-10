@@ -1,57 +1,24 @@
 <template>
   <v-app>
-    <router-view />
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src=""
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src=""
-          width="100"
-        />
-      </div>
-
+    <v-app-bar max-height="4em" color="primary" dark>
       <v-spacer></v-spacer>
 
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
+      <v-btn href target="_blank" text>
         <span class="mr-2">BIBLIOTECAS| UNIVERSIDAD NACIONAL PEDRO RUIZ GALLO</span>
       </v-btn>
     </v-app-bar>
-
-    <v-content>
-    </v-content>
+    <router-view />
   </v-app>
 </template>
 
 <script>
-
 export default {
-  name: 'App',
+  name: "App",
 
-  components: {
-  },
+  components: {},
 
   data: () => ({
     //
-  }),
+  })
 };
 </script>
