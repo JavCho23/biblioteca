@@ -1,29 +1,34 @@
 <template>
-  <v-container :align="center" :justify="center" class=" " fluid>
-    <v-row>
-      <v-col cols="12" md="4">
-        <v-text-field
-          v-model="firstname"
-          :rules="nameRules"
-          :counter="10"
-          label="First name"
-          required
-        ></v-text-field>
-      </v-col>
-
-      <v-col cols="12" md="4">
-        <v-text-field
-          v-model="lastname"
-          :rules="nameRules"
-          :counter="10"
-          label="Last name"
-          required
-        ></v-text-field>
-      </v-col>
-
-      <v-col cols="12" md="4">
-        <v-text-field v-model="email" :rules="emailRules" label="E-mail" required></v-text-field>
-      </v-col>
-    </v-row>
-  </v-container>
+  <v-app>
+    <v-card width="480" class="mx-auto mt-8 pa-2">
+      <v-card-title>
+        <h1 class="title " style="color:#0058BC">Bienvenido</h1>
+      </v-card-title>
+      <v-card-text>
+        <v-form>
+          <v-text-field label="Usuario" prepend-icon="mdi-account-circle" />
+          <v-text-field
+            :type="showPassword ? 'text' : 'password'"
+            label="Password"
+            prepend-icon="mdi-lock"
+            append-icon="mdi-eye-off"
+            @click:append="showPassword = 
+            !showPassword"
+          />
+        </v-form>
+      </v-card-text>
+      <v-card-action>
+        <v-spacer></v-spacer>
+        <v-btn color="primary">Ingresar</v-btn>
+      </v-card-action>
+    </v-card>
+  </v-app>
 </template>
+<script>
+export default {
+  name: "App",
+  data: () => ({
+    showPassword: false
+  })
+};
+</script>
