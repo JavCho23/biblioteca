@@ -1,9 +1,9 @@
 <template>
-  <v-container :align="center" :justify="center" class="ma-12 pa-6" fluid>
-    <v-row>
-      <v-col>
-        <v-row :align="alignment" :justify="justify" class="grey lighten-5" style="height: 300px;">
-          <v-card class="ma-3" max-width="380" v-for="n in 6" :key="n" outlined tile>
+  <v-container  class="ma-12 pa-6" fluid>
+<v-row>
+      <v-col v-for="n in 5" :key="n" >
+        
+          <v-card class="ma-3" max-width="380"  outlined >
             <v-img
               class="white--text align-end"
               height="200px"
@@ -21,9 +21,9 @@
               <v-btn @click="Login" color="primary" text>Ingresar</v-btn>
             </v-card-actions>
           </v-card>
-        </v-row>
+       
       </v-col>
-    </v-row>
+      </v-row>
   </v-container>
 </template>
 
