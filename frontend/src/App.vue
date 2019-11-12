@@ -1,6 +1,5 @@
 <template>
   <v-app>
-    
     <v-content>
       <router-view />
     </v-content>
