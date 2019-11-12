@@ -22,28 +22,21 @@
       <v-divider></v-divider>
 
       <v-list>
-        <v-list-group prepend-icon="mdi-pencil">
+        <v-list-group prepend-icon="mdi-tooltip-edit">
           <template v-slot:activator>
             <v-list-item-title>Mantenimiento</v-list-item-title>
           </template>
 
           <v-list-item v-for="(admin, i) in admins" :key="i" link>
-            <v-list-item-icon>
-              <v-icon v-text="admin[0]"></v-icon>
-            </v-list-item-icon>
-            <v-list-item-title v-text="admin[1]"></v-list-item-title>
+            <v-list-item-title v-text="admin[0]"></v-list-item-title>
           </v-list-item>
         </v-list-group>
-        <v-list-group prepend-icon="mdi-pencil">
+        <v-list-group prepend-icon="mdi-tag-remove">
           <template v-slot:activator>
             <v-list-item-title>Prestamos y Reservas</v-list-item-title>
           </template>
-
           <v-list-item v-for="(items, i) in items" :key="i" link>
-            <v-list-item-icon>
-              <v-icon v-text="items[0]"></v-icon>
-            </v-list-item-icon>
-            <v-list-item-title v-text="items[1]"></v-list-item-title>
+            <v-list-item-title v-text="items[0]"></v-list-item-title>
           </v-list-item>
         </v-list-group>
       </v-list>
@@ -57,16 +50,13 @@ export default {
     return {
       drawer: null,
       admins: [
-        ["mdi-book-open-page-variant", "Universidad"],
-        ["mdi-book-open-page-variant", "Programa de Estudio"],
-        ["mdi-book-open-page-variant", "Libro"],
-        ["mdi-book-open-page-variant", "Autor"],
-        ["mdi-book-open-page-variant", "Editorial"]
+        ["Universidad"],
+        ["Programa de Estudio"],
+        ["Libro"],
+        ["Autor"],
+        ["Editorial"]
       ],
-      items: [
-        ["mdi-book-open-page-variant", "Prestamo"],
-        ["mdi-book-open-page-variant", "Reserva"],
-      ],
+      items: [["Prestamo"], ["Reserva"]]
     };
   }
 };
