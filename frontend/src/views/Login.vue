@@ -1,7 +1,7 @@
 <template>
   <div>
     <Bar />
-    <v-card width="480" class="mx-auto mt-8 pa-2">
+    <v-card width="480" class="mx-auto mt-8 pa-2 text-center" :elevation="20">
       <v-card-title>
         <h1 class="title" style="color:#0058BC">Bienvenido</h1>
       </v-card-title>
@@ -20,7 +20,7 @@
       </v-card-text>
       <v-card-action>
         <v-spacer></v-spacer>
-        <v-btn @click="Biblioteca" color="primary">Ingresar</v-btn>
+        <v-btn @click="Biblioteca" color="#0C21A7" dark>Ingresar</v-btn>
       </v-card-action>
     </v-card>
   </div>

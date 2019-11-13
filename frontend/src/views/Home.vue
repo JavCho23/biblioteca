@@ -1,14 +1,14 @@
 <template>
   <div>
     <Bar />
-    <v-container class="ma-12 pa-6" fluid>
+    <v-container class="ma-6 pa-4" fluid>
       <v-row>
         <v-col v-for="n in 5" :key="n">
-          <v-card class="ma-3" max-width="380" outlined>
+          <v-card class="align-content-center flex-wrap" max-width="380" raised :elevation="20">
             <v-img
               class="white--text align-end"
               height="200px"
-              src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
+              src="../../imagenes/portada.jpeg"
             >
               <v-card-title>Biblioteca de PostGrado</v-card-title>
             </v-img>
