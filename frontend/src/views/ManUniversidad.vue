@@ -1,8 +1,9 @@
 <template>
   <div class="d-flex mx-auto mt-8 pa-4">
     <Bar />
-    <v-card>
-      <v-form v-model="valid">
+    <v-container d-flex justify-space-around>
+      <v-card width="35em">
+      <v-form v-model="valid" >
         <v-container class="d-flex flex-column mx-auto mt-8 pa-4" :elevation="20">
           <v-container-title>
             <h1 class="title" style="color:#78909C">UNIVERSIDAD</h1>
@@ -16,14 +17,15 @@
         </v-container>
       </v-form>
     </v-card>
-    <v-card>
-      <v-container>
+    <v-card width="35em">
+      <v-container >
         <v-container-title>
           <h2>Mantenimiento</h2>
           <v-spacer></v-spacer>
         </v-container-title>
       </v-container>
     </v-card>
+    </v-container>
   </div>
 </template>
 <script>
