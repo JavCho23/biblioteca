@@ -28,7 +28,7 @@
           </template>
 
           <v-list-item v-for="(admin, i) in admins" :key="i" link>
-            <v-list-item-title v-text="admin[0]"></v-list-item-title>
+            <v-list-item-title v-text="admin[0]" :to="rutas[0]"></v-list-item-title>
           </v-list-item>
         </v-list-group>
         <v-list-group prepend-icon="mdi-tag-remove">
@@ -56,7 +56,8 @@ export default {
         ["Autor"],
         ["Editorial"]
       ],
-      items: [["Prestamo"], ["Reserva"]]
+      items: [["Prestamo"], ["Reserva"]],
+      rutas:[['/universidad']]
     };
   }
 };
