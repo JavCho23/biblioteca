@@ -27,8 +27,8 @@
             <v-list-item-title>Mantenimiento</v-list-item-title>
           </template>
 
-          <v-list-item v-for="(admin, i) in admins" :key="i" link>
-            <v-list-item-title v-text="admin[0]" :to="rutas[0]"></v-list-item-title>
+          <v-list-item v-for="(admin, i) in admins" :key="i" :to="admin[1]" link>
+            <v-list-item-title v-text="admin[0]"></v-list-item-title>
           </v-list-item>
         </v-list-group>
         <v-list-group prepend-icon="mdi-tag-remove">
@@ -50,14 +50,13 @@ export default {
     return {
       drawer: null,
       admins: [
-        ["Universidad"],
-        ["Programa de Estudio"],
-        ["Libro"],
-        ["Autor"],
-        ["Editorial"]
+        ["Universidad", "/universidad"],
+        ["Programa de Estudio", "/programa"],
+        ["Libro", "/libro"],
+        ["Autor", "/autor"],
+        ["Editorial", "/editorial"]
       ],
-      items: [["Prestamo"], ["Reserva"]],
-      rutas:[['/universidad']]
+      items: [["Prestamo"], ["Reserva"]]
     };
   }
 };
